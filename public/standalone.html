@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie d'Images - Version Standalone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Styles spécifiques pour la version standalone */
+        .standalone-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .standalone-notice i {
+            color: #f39c12;
+            margin-right: 0.5rem;
+        }
+        
+        .upload-section {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+        
+        .demo-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .demo-image {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .demo-image i {
+            font-size: 3rem;
+            color: #cbd5e0;
+            margin-bottom: 1rem;
+        }
+        
+        .demo-image h3 {
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+        
+        .demo-image p {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1><i class="fas fa-images"></i> Galerie d'Images</h1>
+            <p>Partagez et découvrez des images avec la communauté</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Notice pour la version standalone -->
+            <div class="standalone-notice">
+                <i class="fas fa-info-circle"></i>
+                <strong>Version de démonstration</strong> - Cette version fonctionne sans serveur backend. 
+                Pour utiliser toutes les fonctionnalités (ajout/suppression d'images), 
+                veuillez démarrer le serveur Node.js avec <code>./start.sh</code>
+            </div>
+
+            <!-- Section d'ajout d'image (désactivée) -->
+            <section class="upload-section">
+                <div class="upload-card">
+                    <h2><i class="fas fa-cloud-upload-alt"></i> Ajouter une nouvelle image</h2>
+                    <p style="color: #718096; margin-bottom: 1rem;">
+                        Fonctionnalité disponible uniquement avec le serveur backend
+                    </p>
+                    <form class="upload-form">
+                        <div class="file-input-container">
+                            <input type="file" disabled>
+                            <label for="imageInput" class="file-input-label">
+                                <i class="fas fa-camera"></i>
+                                <span>Choisir une image</span>
+                            </label>
+                        </div>
+                        <button type="button" class="upload-btn" disabled>
+                            <i class="fas fa-upload"></i>
+                            Télécharger
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Section de la galerie -->
+            <section class="gallery-section">
+                <div class="gallery-header">
+                    <h2><i class="fas fa-th-large"></i> Galerie d'Images</h2>
+                    <div class="gallery-stats">
+                        <span>Images de démonstration</span>
+                    </div>
+                </div>
+                
+                <!-- Images de démonstration -->
+                <div class="demo-images">
+                    <div class="demo-image">
+                        <i class="fas fa-mountain"></i>
+                        <h3>Paysages</h3>
+                        <p>Partagez vos plus beaux paysages</p>
+                    </div>
+                    
+                    <div class="demo-image">
+                        <i class="fas fa-camera"></i>
+                        <h3>Photographie</h3>
+                        <p>Montrez vos talents de photographe</p>
+                    </div>
+                    
+                    <div class="demo-image">
+                        <i class="fas fa-palette"></i>
+                        <h3>Art</h3>
+                        <p>Partagez vos créations artistiques</p>
+                    </div>
+                    
+                    <div class="demo-image">
+                        <i class="fas fa-heart"></i>
+                        <h3>Mémoires</h3>
+                        <p>Conservez vos souvenirs précieux</p>
+                    </div>
+                    
+                    <div class="demo-image">
+                        <i class="fas fa-users"></i>
+                        <h3>Événements</h3>
+                        <p>Documentez vos moments spéciaux</p>
+                    </div>
+                    
+                    <div class="demo-image">
+                        <i class="fas fa-star"></i>
+                        <h3>Favoris</h3>
+                        <p>Gardez vos images préférées</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Galerie d'Images. Tous droits réservés.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                <a href="index.html" style="color: #667eea; text-decoration: none;">
+                    <i class="fas fa-server"></i> Version complète avec serveur
+                </a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
